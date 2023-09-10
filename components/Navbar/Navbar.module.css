@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+  .icon {
+    font-size: 24px;
+  }
+}
+
+.icon {
+    color:rgb(52, 94, 235);
+  }

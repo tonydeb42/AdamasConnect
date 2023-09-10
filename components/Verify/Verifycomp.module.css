@@ -1,0 +1,27 @@
+.verifycontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.body{
+    background-color:black;
+}
+
+.title{
+    display: block;
+    color: white;
+}
+
+.p{
+    color: white;
+    text-align:center;
+    margin-top:15px;
+}
+
+.a{
+    cursor:pointer;
+    color:blue;
+    text-decoration:none;
+}
