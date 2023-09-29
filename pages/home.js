@@ -13,7 +13,7 @@ const Profile = () => {
         </div>
         <div className="col tw-flex tw-flex-row" style={{ padding: "0" }}>
           <ProfileComp />
-          <div className="tw-w-1/4 tw-bg-black tw-text-white tw-hidden lg:tw-flex">fasdfasf</div>
+          <div className="tw-w-1/4 tw-bg-black tw-text-white tw-hidden lg:tw-flex">suggestions</div>
         </div>
       </div>
     </div>
