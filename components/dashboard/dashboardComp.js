@@ -1,4 +1,5 @@
 import React from "react";
+import Post from "../Post/Post";
 
 const ProfileComp = () => {
   return (
@@ -11,7 +12,7 @@ const ProfileComp = () => {
         borderRight: "2px silver solid",
       }}>
       <h1 className="text-center text-white tw-mt-5">Dashboard</h1>
-      <div className="tw-flex  tw-flex-col tw-w-full lg:tw-mx-auto">
+      <div className="tw-flex  tw-flex-col tw-w-full tw-mt-6 tw-px-5 lg:tw-mx-auto">
         <div className="tw-flex  tw-flex-col tw-w-full lg:tw-mx-auto ">
           <textarea
             className=" tw-p-1 lg:tw-w-2/3 lg:tw-mx-auto  tw-bg-transparent focus:tw-outline-none  tw-resize-none tw-text-white"
@@ -22,7 +23,9 @@ const ProfileComp = () => {
               Post
             </button>
           </div>
-          <div className="tw-flex  tw-flex-col  lg:tw-mx-auto tw-mt-5 tw-text-white">adsfasf</div>
+          <div className="tw-flex  tw-flex-col  lg:tw-text-center lg:tw-mx-20 tw-mt-5 tw-text-white border">
+            <Post />
+          </div>
         </div>
       </div>
     </div>
