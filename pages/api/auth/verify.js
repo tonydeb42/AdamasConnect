@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import cookie from "cookie";
 import jwt from "jsonwebtoken";
 import connectDb from "../../../lib/db";
 import user from "../../../lib/models/user";
@@ -13,10 +14,15 @@ const handler = async (req, res) => {
       if (foundUser) {
         const response = await bcrypt.compare(req.body.password, foundUser.password);
         if (response) {
-          const token = jwt.sign({ email: req.body.email }, "SECRET_KEY", { expiresIn: "3h" });
+          const token = jwt.sign({ email: req.body.email }, "SECRET_KEY", {
+            expiresIn: "3h",
+          });
           const { password, ...rest } = foundUser._doc;
           const user = JSON.stringify(rest);
-
+          res.setHeader(
+            "Set-Cookie",
+            cookie.serialize("token", token, { httpOnly: true, maxAge: 60 * 60 })
+          );
           res.json({ message: "Login Successful", success: true, token, user });
         } else {
           res.json({ message: "Incorrect password. Please try again." });
