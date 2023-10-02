@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
+import { useRouter } from "next/router";
 import Navbar from "../../components/Navbar/Navbar";
 import UserPageComp from "../../components/UserPage/UserPageComp";
 
 const UserPage = () => {
+  const router = useRouter();
+  const { _id } = router.query;
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
   return (
     <div className="container-fluid">
       <div className="row">
@@ -13,7 +25,7 @@ const UserPage = () => {
           <Navbar />
         </div>
         <div className="col" style={{ padding: "0" }}>
-          <UserPageComp />
+          <UserPageComp id={_id} />
         </div>
       </div>
     </div>
