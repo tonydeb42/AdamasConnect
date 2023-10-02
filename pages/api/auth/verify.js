@@ -55,11 +55,14 @@ const handler = async (req, res) => {
                 const token = jwt.sign({ email: req.body.email }, "SECRET_KEY", {
                   expiresIn: "3h",
                 });
+                const { password, ...rest } = newUser;
+                const user = JSON.stringify(rest);
+
                 res.json({
                   message: "Sign Up Successful",
                   success: true,
                   token,
-                  user: req.body.email,
+                  user,
                 });
               })
               .catch((err) => {
