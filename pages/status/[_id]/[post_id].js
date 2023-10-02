@@ -1,8 +1,8 @@
 import React from "react";
-import AssignmentComp from "../components/Assignments/AssignmentComp";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../../../components/Navbar/Navbar";
+import SinglePostComp from "../../../components/SinglePost/SinglePostComp";
 
-const Assignment = () => {
+const SinglePost = () => {
   return (
     <div className="container-fluid">
       <div className="row">
@@ -12,14 +12,14 @@ const Assignment = () => {
           <Navbar />
         </div>
         <div className="col" style={{ padding: "0" }}>
-          <AssignmentComp />
+          <SinglePostComp />
         </div>
       </div>
     </div>
   );
 };
 
-export default Assignment;
+export default SinglePost;
 
 export async function getServerSideProps(context) {
   const { req, res } = context;

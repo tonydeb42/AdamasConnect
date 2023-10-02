@@ -49,7 +49,7 @@ const ProfileComp = () => {
             </button>
           </div>
 
-          {posts.length > 0 && posts.map((post) => <PostBox post={post} />)}
+          {posts.length > 0 && posts.map((post) => <PostBox post={post} key={post._id} />)}
         </div>
       </div>
     </div>

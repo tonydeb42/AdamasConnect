@@ -1,8 +1,9 @@
 import React from "react";
-import AssignmentComp from "../components/Assignments/AssignmentComp";
-import Navbar from "../components/Navbar/Navbar";
 
-const Assignment = () => {
+import Navbar from "../../components/Navbar/Navbar";
+import UserPageComp from "../../components/UserPage/UserPageComp";
+
+const UserPage = () => {
   return (
     <div className="container-fluid">
       <div className="row">
@@ -12,14 +13,14 @@ const Assignment = () => {
           <Navbar />
         </div>
         <div className="col" style={{ padding: "0" }}>
-          <AssignmentComp />
+          <UserPageComp />
         </div>
       </div>
     </div>
   );
 };
 
-export default Assignment;
+export default UserPage;
 
 export async function getServerSideProps(context) {
   const { req, res } = context;
