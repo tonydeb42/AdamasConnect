@@ -12,7 +12,7 @@ export default async function handler(req, res) {
       res.json({ post });
     }
     if (author) {
-      const posts = await Post.find({ author }).populate("author").exec();
+      const posts = await Post.find({ author }).populate("author").sort({ createdAt: -1 }).exec();
       res.json({ posts });
     } else {
       const posts = await Post.find({}).populate("author").sort({ createdAt: -1 }).exec();
@@ -20,8 +20,8 @@ export default async function handler(req, res) {
     }
   }
   if (req.method === "POST") {
-    const { author, postdata } = req.body;
-    const postDoc = await Post.create({ author, postdata });
+    const { author, images, postdata } = req.body;
+    const postDoc = await Post.create({ author, images, postdata });
     res.json(postDoc);
   }
 }

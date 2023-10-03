@@ -6,7 +6,7 @@ const SinglePostComp = ({ post }) => {
     <div
       className="container-fluid "
       style={{ height: "100%", width: "100%", backgroundColor: "black" }}>
-      <div className="text-center position-relative " style={{ top: "35px", color: "white" }}>
+      <div className=" position-relative " style={{ top: "35px", color: "white" }}>
         <br />
         <PostBox post={post} />
       </div>
