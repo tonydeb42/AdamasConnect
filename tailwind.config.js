@@ -14,6 +14,7 @@ module.exports = {
         twitterBorder: "#2f3336",
         twitterLightGray: "#71767b",
         twitterDarkGray: "#17181c",
+        darkblue: "#0E21A0",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -55,7 +55,7 @@ const handler = async (req, res) => {
                 const token = jwt.sign({ email: req.body.email }, "SECRET_KEY", {
                   expiresIn: "3h",
                 });
-                const { password, ...rest } = newUser;
+                const { password, ...rest } = newUser._doc;
                 const user = JSON.stringify(rest);
 
                 res.json({

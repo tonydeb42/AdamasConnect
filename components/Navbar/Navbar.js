@@ -1,10 +1,12 @@
-import logo from "../../assets/connect_logo.png";
+import { deleteCookie } from "cookies-next";
 import "font-awesome/css/font-awesome.min.css";
-import styles from "./Navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useContext } from "react";
+import logo from "../../assets/connect_logo.png";
 import NavbarContext from "../../context/NavbarContext";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const { activePage, setActivePage } = useContext(NavbarContext);
@@ -12,10 +14,14 @@ const Navbar = () => {
   const active = {
     backgroundColor: "#0E21A0",
   };
-
+  const router = useRouter();
+  const logout = () => {
+    deleteCookie("token");
+    router.push("/verify");
+  };
   return (
     <div
-      className={`d-flex flex-column justify-content-between col-auto min-vh-100 `}
+      className={`d-flex flex-column justify-content-between col-auto min-vh-100`}
       style={{ backgroundColor: "black" }}>
       <div className="mt-4">
         <Link
@@ -99,6 +105,17 @@ const Navbar = () => {
               <i className={`fa fa-solid fa-comment ${styles.icon}`}></i>
               <span className="ms-2 d-none d-sm-inline fw-bold">Feedback</span>
             </Link>
+          </li>
+          <li className="nav-item">
+            <button
+              className="nav-link text-white text-center text-sm-start mt-3"
+              style={activePage === "feedback" ? active : null}
+              onClick={() => {
+                logout();
+              }}>
+              <i className={`fa fa-solid fa-sign-out ${styles.icon}`}></i>
+              <span className="ms-2 d-none d-sm-inline fw-bold">Log out</span>
+            </button>
           </li>
         </ul>
       </div>

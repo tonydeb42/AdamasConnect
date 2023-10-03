@@ -19,7 +19,7 @@ export default function PostBox({ post }) {
   return (
     <Link
       className="tw-flex  tw-flex-col  lg:tw-mx-40 tw-py-5   tw-mt-5 tw-text-white border-bottom tw-rounded-xl tw-no-underline "
-      href={`/status/${post?.author._id}/${post?._id}`}>
+      href={`/status/${post?.author?._id}/${post?._id}`}>
       <div className="tw-flex tw-gap-6">
         <div className="tw-rounded-full border tw-w-12 tw-h-12 tw-overflow-hidden ">
           <Image src={logo} alt="adamas_connect_logo" style={{ height: "50px", width: "45px" }} />
