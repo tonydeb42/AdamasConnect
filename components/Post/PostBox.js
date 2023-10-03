@@ -18,10 +18,10 @@ export default function PostBox({ post }) {
 
   return (
     <Link
-      className="tw-flex  tw-flex-col  tw-px-10 tw-py-5  lg:tw-mx-20 tw-mt-5 tw-text-white border-bottom tw-rounded-xl tw-no-underline "
+      className="tw-flex  tw-flex-col  lg:tw-mx-40 tw-py-5   tw-mt-5 tw-text-white border-bottom tw-rounded-xl tw-no-underline "
       href={`/status/${post?.author._id}/${post?._id}`}>
       <div className="tw-flex tw-gap-6">
-        <div className="tw-rounded-full border tw-w-12 tw-h-12 tw-overflow-hidden">
+        <div className="tw-rounded-full border tw-w-12 tw-h-12 tw-overflow-hidden ">
           <Image src={logo} alt="adamas_connect_logo" style={{ height: "50px", width: "45px" }} />
         </div>
         <div className="tw-flex tw-flex-col">
@@ -30,11 +30,11 @@ export default function PostBox({ post }) {
             className="tw-text-white tw-font-bold  tw-no-underline hover:tw-underline">
             <span>{post?.author?.name}</span>
           </Link>
-          <div className="tw-flex tw-my-3 tw-gap-3">
+          <div className="tw-flex tw-flex-wrap tw-my-3 tw-gap-3">
             {post?.images?.length > 0 &&
               post?.images.map((img) => (
                 <div className="" key={img}>
-                  <img src={img} alt="" className="tw-h-60" />
+                  <img src={img} alt="" className="md:tw-h-60 md:tw-w-50 tw-h-20" />
                 </div>
               ))}
           </div>

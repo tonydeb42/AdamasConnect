@@ -7,7 +7,7 @@ const Profile = () => {
     <div className="container-fluid ">
       <div className="row">
         <div
-          className="col-auto"
+          className="col-auto tw-p-0"
           style={{ backgroundColor: "black", borderRight: "2px silver solid" }}>
           <Navbar />
         </div>
