@@ -1,8 +1,21 @@
-import React from "react";
-import AssignmentComp from "../components/Assignments/AssignmentComp";
-import Navbar from "../components/Navbar/Navbar";
+import React, { useEffect, useState } from "react";
 
-const Assignment = () => {
+import { useRouter } from "next/router";
+import Navbar from "../../components/Navbar/Navbar";
+import UserPageComp from "../../components/UserPage/UserPageComp";
+
+const UserPage = () => {
+  const router = useRouter();
+  const { _id } = router.query;
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
   return (
     <div className="container-fluid">
       <div className="row">
@@ -12,14 +25,14 @@ const Assignment = () => {
           <Navbar />
         </div>
         <div className="col" style={{ padding: "0" }}>
-          <AssignmentComp />
+          <UserPageComp id={_id} />
         </div>
       </div>
     </div>
   );
 };
 
-export default Assignment;
+export default UserPage;
 
 export async function getServerSideProps(context) {
   const { req, res } = context;
