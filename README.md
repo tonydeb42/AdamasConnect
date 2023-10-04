@@ -1,6 +1,6 @@
 # Adamas Connect - All-in-One Web Application
 
-Welcome to Adamas Connect, your all-in-one solution for campus connectivity! Built by Bishal Sarkar and Pratyush Deb using Next.js and React.js, Adamas Connect aims to provide seamless connectivity to campus students through a robust social media platform, an intuitive Learning Management System (LMS), and an interactive chat bot. This README will guide you through the application, its features, and how to get started.
+Welcome to Adamas Connect, your all-in-one solution for campus connectivity! Built by Pratyush Deb and Bishal Sarkar using Next.js and React.js, Adamas Connect aims to provide seamless connectivity to campus students through a robust social media platform, an intuitive Learning Management System (LMS), and an interactive chat bot. This README will guide you through the application, its features, and how to get started.
 
 ## Features
 
